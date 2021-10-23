@@ -1,6 +1,9 @@
 import MessageHandler from '../../Handlers/MessageHandler'
 import BaseCommand from '../../lib/BaseCommand'
 import WAClient from '../../lib/WAClient'
+import request from '../../lib/request'
+import { MessageType } from '@adiwajshing/baileys'
+
 import { ICommand, IParsedArgs, ISimplifiedMessage } from '../../typings'
 
 export default class Command extends BaseCommand {
@@ -29,15 +32,16 @@ export default class Command extends BaseCommand {
                     categories[info.config.category].push(info)
                 }
             }
-            let text = `👾 *Kaoi's Command List* 👾\n\n`
+            let text = `👋 Hie *${M.sender.username}* I'm Koneko\n\n🎴 *Rule: 1-Do not call the bot/get banned.*\n\n`
             const keys = Object.keys(categories).sort((a, b) => a.localeCompare(b))
             for (const key of keys)
-                text += `${this.emojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n❐ \`\`\`${categories[
+                 text += `*❖─${this.emojis[keys.indexOf(key)]} ${this.client.util.capitalize(key)}🎗─❖*\n➻ \`\`\n${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
                     .join(', ')}\`\`\`\n\n`
-            return void M.reply(
+            return void M.reply( await request.buffer('https://wallpapercave.com/wp/wp7518006.png'),  MessageType.image,            undefined,
+            undefined,
                 `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
             )
         }
@@ -58,5 +62,5 @@ export default class Command extends BaseCommand {
         )
     }
 
-    emojis = ['📺', '🤖', '⚙️', '👨‍💻', '📚', '👻', '🎲', '😶‍🌫️', '📼', '🦉', '🪜']
+    emojis = ['🍥', '🤖', '⚙️', '🎗️', '📚', '🎗️', '🎲', '🎗', '📼', '🦉', '🪜']
 }
