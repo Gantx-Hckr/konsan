@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
             let text = `👋 Hie *${M.sender.username}* I'm Koneko\n\n🎴 *Rule: 1-Do not call the bot/get banned.*\n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                 text += `*❖─${this.emojis[keys.indexOf(key)]} ${this.client.util.capitalize(key)}🎗─❖*\n➻ \`\`\${categories[
+                 text += `*❖─${this.emojis[keys.indexOf(key)]} ${this.client.util.capitalize(key)}🎗─❖*\n➻ \`\`\`${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
