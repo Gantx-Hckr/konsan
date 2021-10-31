@@ -8,11 +8,11 @@ import { ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'profile',
-            description: 'Displays user-profile 📜',
+            command: 'xp',
+            description: 'Displays user-exp📜',
             category: 'general',
-            usage: `${client.config.prefix}profile (@tag)`,
-            aliases: ['p']
+            usage: `${client.config.prefix}exp (@tag)`,
+            aliases: ['📈']
         })
     }
 
