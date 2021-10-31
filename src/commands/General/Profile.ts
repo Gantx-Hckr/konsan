@@ -9,11 +9,10 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'profile',
-            description: 'Displays user-profile 🌟',
+            description: 'Displays user-profile 📜',
             category: 'general',
             usage: `${client.config.prefix}profile (@tag)`,
-            aliases: ['p'],
-            baseXp: 30
+            aliases: ['p']
         })
     }
 
@@ -31,22 +30,22 @@ export default class Command extends BaseCommand {
         } catch (err) {
             M.reply(`Profile Picture not Accessible of ${username}`)
             pfp =
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Kawaii_robot_power_clipart.svg/640px-Kawaii_robot_power_clipart.svg.png'
+                'https://i.pinimg.com/originals/d0/4b/b1/d04bb1b91dfd87bb8b65e98abd32aa3d.jpg'
         }
         const data = await this.client.getUser(user)
         await M.reply(
             await request.buffer(
                 pfp ||
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Kawaii_robot_power_clipart.svg/640px-Kawaii_robot_power_clipart.svg.png'
+                    'https://i.pinimg.com/originals/d0/4b/b1/d04bb1b91dfd87bb8b65e98abd32aa3d.jpg'
             ),
             MessageType.image,
             undefined,
             undefined,
-            `🎋 *Username: ${username}*\n\n🎫 *About: ${
+            `🏮 *Username: ${username}*\n\n🎗 *About: ${
                 (await this.client.getStatus(user)).status || 'None'
-            }*\n\n🌟 *XP: ${data.Xp || 0}*\n\n👑 *Admin: ${
+            }*\n\n⭐ *XP: ${data.Xp || 0}*\n\n👑 *Admin: ${
                 M.groupMetadata?.admins?.includes(user) || false
-            }*\n\n❌ *Ban ${data.ban || false}*`
+            }*\n\n✖ *Ban ${data.ban || false}*`
         )
     }
 }
