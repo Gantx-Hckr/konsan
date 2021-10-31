@@ -32,7 +32,7 @@ export default class Command extends BaseCommand {
                     categories[info.config.category].push(info)
                 }
             }
-            let text = `👋 Hie *${M.sender.username}* I'm Koneko\n\n🎴 *Rule: 1-Do not call the bot/get banned.*\n\n`
+            let text = `👋 Konichiwa (💜w💜) *${M.sender.username}* I'm Koneko\n\n🎴 *Rule: 1-Do not call the bot/get banned.*\n\n`
             const keys = Object.keys(categories).sort((a, b) => a.localeCompare(b))
             for (const key of keys)
                  text += `*❖─${this.emojis[keys.indexOf(key)]} ${this.client.util.capitalize(key)}🎗─❖*\n➻ \`\`\n${categories[
@@ -62,5 +62,5 @@ export default class Command extends BaseCommand {
         )
     }
 
-    emojis = ['🍥', '🤖', '⚙️', '🎗️', '📚', '🎗️', '🎲', '🎗', '📼', '🦉', '🪜']
+    emojis = ['🍥', '🎗', '🎗️', '🎗️', '🎗️', '🎗️', '🎗️', '🎗', '📼', '🦉', '🪜']
 }
