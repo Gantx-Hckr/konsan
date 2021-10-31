@@ -35,14 +35,14 @@ export default class Command extends BaseCommand {
             let text = `👋 Konichiwa (💜w💜) *${M.sender.username}* I'm Koneko\n\n🎴 *Rule: 1-Do not call the bot/get banned.*\n\n`
             const keys = Object.keys(categories).sort((a, b) => a.localeCompare(b))
             for (const key of keys)
-                 text += `*╔═══◤${this.emojis[keys.indexOf(key)]} ${this.client.util.capitalize(key)}◥*\n➻ \`\`\n${categories[
+                 text += `*╔═══◤${this.emojis[keys.indexOf(key)]} ${this.client.util.capitalize(key)}◢*\n➻ \`\`\n${categories[
                     key
                 ]
                     .map((command) => command.config?.command)
                     .join(', ')}\`\`\n\n\n`
             return void M.reply( await request.buffer('https://wallpapercave.com/wp/wp7518006.png'),  MessageType.image,            undefined,
             undefined,
-                `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
+                `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*\n᠃ ⚘᠂ ⚘ ˚ ⚘ ᠂ ⚘ ᠃`
             )
         }
         const key = parsedArgs.joined.toLowerCase()
